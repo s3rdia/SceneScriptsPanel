@@ -13,6 +13,7 @@ var editor_interface:EditorInterface
 
 func _ready():
 	item_selected.connect(_on_item_activated)
+	_on_scene_change(self)
 
 ###################################################################################################
 # Functions
@@ -39,7 +40,7 @@ func add_unique_item(script:String):
 # Signals
 ###################################################################################################
 
-func _on_scene_change(scene:Node) -> void:
+func _on_scene_change(scene:Node):
 	clear()
 	
 	var scene_root = get_tree().edited_scene_root
